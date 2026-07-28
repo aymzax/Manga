@@ -109,26 +109,16 @@ async function handleAuth(e){
 
 
         // إنشاء حساب
+const { data, error } = await supabase.auth.signUp({
+    email: email,
+    password: password,
+    options: {
+        emailRedirectTo: "https://aymzax.github.io/Manga/"
+    }
+});
 
-        if(isSignupMode){
-
-
-
-            const {data,error} =
-            await supabase.auth.signUp({
-
-                email: email,
-
-                password: password,
-
-
-                options:{
-
-
-                    emailRedirectTo:
-
-                    'https://aymzax.github.io/Solo-Manga/'
-
+console.log(data);
+console.log(error);
 
                 }
 
